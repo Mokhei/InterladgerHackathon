@@ -1,4 +1,4 @@
-# InterladgerHackathon
+# InterledgerHackathon
 
 in order for you to be able to run the following solution you will need to have the following tools installed.
 Visual studio code.
