@@ -15,6 +15,7 @@ app.use(express.static('public'));
 const INTERLEDGER_SENDER = 'ilp.interledger-test.dev/thato';
 const INTERLEDGER_RECEIVER = 'ilp.interledger-test.dev/cavil';
 const RECEIVER_ACCOUNT_ID = '25b5c19e-060d-4586-92e7-009a101b4605';
+//fixer.io API key to use for the currency exchange or exhange of currency 
 const API_KEY = '48f7a16d708bde84ca9fa2b81587458d';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
