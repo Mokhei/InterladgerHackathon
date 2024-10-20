@@ -8,7 +8,7 @@ import pkg from 'ilp';
 const app = express();
 app.use(express.json());
 
-// Serving static files from the "public" directory
+// Serving static html file
 app.use(express.static('public'));
 
 // API Key and Wallet Addresses
@@ -45,13 +45,13 @@ app.post('/send-payment', async (req, res) => {
     
     try {
 
-        // Convert ZAR to EUR
+        // Performing currency Conversion Route using the fixer.io api
         const conversionResponse = await fetch(`https://api.exchangerate-api.com/v4/latest/ZAR`);
         const conversionData = await conversionResponse.json();
         const rate = conversionData.rates.EUR;
         const eurAmount = amount * rate;
 
-        // implementing the interledger logic.
+        // implementing the interledger payment logic.
         const sender = createSender({
             account: INTERLEDGER_SENDER,
         });
@@ -69,5 +69,6 @@ app.post('/send-payment', async (req, res) => {
 });
 
 app.listen(3000, () => {
+    //Logging console to check if server is 
     console.log('Server running on port 3000');
 });
